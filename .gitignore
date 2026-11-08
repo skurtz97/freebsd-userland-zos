@@ -1,6 +1,21 @@
-# Build products from the Linux adapter; the vendor tree stays clean.
+# Build products from the Linux adapter; the vendor trees stay clean.
 *.o
+*.a
 /bin/sh/sh
 /bin/kill/kill
 /bin/test/test
 /usr.bin/printf/printf
+
+# libedit generated headers, in either build location.
+/contrib/libedit/common.h
+/contrib/libedit/emacs.h
+/contrib/libedit/fcns.h
+/contrib/libedit/func.h
+/contrib/libedit/help.h
+/contrib/libedit/vi.h
+/lib/libedit/common.h
+/lib/libedit/emacs.h
+/lib/libedit/fcns.h
+/lib/libedit/func.h
+/lib/libedit/help.h
+/lib/libedit/vi.h

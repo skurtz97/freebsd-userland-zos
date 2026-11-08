@@ -1,11 +1,12 @@
-# freebsd-sh-port-zos
+# freebsd-userland-zos-port
 
 FreeBSD `bin/sh` prepared for z/OS UNIX, and the Linux adapter used to
 benchmark it against zksh.
 
 This repository is the vendor source for zksh's `vendor/freebsd-sh`
 submodule. It is not installed by zksh and is not part of the zksh
-binary.
+binary. The name is deliberately broader than the current contents:
+the goal is a FreeBSD userland port for z/OS, starting with `bin/sh`.
 
 ## Upstream pin
 

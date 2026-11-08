@@ -1,4 +1,4 @@
-# freebsd-userland-zos-port-src
+# freebsd-userland-zos
 
 FreeBSD userland prepared for z/OS UNIX. The tree is imported from
 FreeBSD `release/15.1.0` and laid out like the FreeBSD source monorepo:

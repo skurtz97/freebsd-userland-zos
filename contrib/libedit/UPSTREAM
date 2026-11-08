@@ -1,0 +1,4 @@
+upstream https://github.com/freebsd/freebsd-src
+branch   release/15.1.0
+commit   96841ea08dcfa84b954a32dc5ae1a26c28966cf4
+subtree  contrib/libedit

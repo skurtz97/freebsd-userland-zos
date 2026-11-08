@@ -1,0 +1,6 @@
+# Build products from the Linux adapter; the vendor tree stays clean.
+*.o
+/bin/sh/sh
+/bin/kill/kill
+/bin/test/test
+/usr.bin/printf/printf

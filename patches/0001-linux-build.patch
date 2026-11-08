@@ -1,0 +1,39 @@
+diff --git a/bin/sh/expand.c b/bin/sh/expand.c
+index dfafe35fbac..16ab9df5fc8 100644
+--- a/bin/sh/expand.c
++++ b/bin/sh/expand.c
+@@ -1163,7 +1163,7 @@ expmeta(char *enddir, char *name, struct arglist *arglist)
+ 		if (dp->d_name[0] == '.' && ! matchdot)
+ 			continue;
+ 		if (patmatch(start, dp->d_name)) {
+-			namlen = dp->d_namlen;
++			namlen = strlen(dp->d_name);
+ 			if (enddir + namlen + 1 > expdir_end)
+ 				continue;
+ 			memcpy(enddir, dp->d_name, namlen + 1);
+diff --git a/bin/sh/mkbuiltins b/bin/sh/mkbuiltins
+index e0f997ba50a..7bd82834ca0 100755
+--- a/bin/sh/mkbuiltins
++++ b/bin/sh/mkbuiltins
+@@ -31,7 +31,7 @@
+ # OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ # SUCH DAMAGE.
+ 
+-temp=`mktemp -t ka`
++temp=`mktemp "${TMPDIR:-/tmp}/ka.XXXXXX"`
+ srcdir=$1
+ havejobs=0
+ if grep '^#define[	 ]*JOBS[	 ]*1' $srcdir/shell.h > /dev/null
+diff --git a/bin/sh/mktokens b/bin/sh/mktokens
+index 1b0b0b9a586..58702d79d0a 100644
+--- a/bin/sh/mktokens
++++ b/bin/sh/mktokens
+@@ -35,7 +35,7 @@
+ # token marks the end of a list.  The third column is the name to print in
+ # error messages.
+ 
+-temp=`mktemp -t ka`
++temp=`mktemp "${TMPDIR:-/tmp}/ka.XXXXXX"`
+ cat > $temp <<\!
+ TEOF	1	end of file
+ TNL	0	newline

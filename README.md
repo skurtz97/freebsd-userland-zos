@@ -1,11 +1,11 @@
-# freebsd-userland-zos-port
+# freebsd-userland-zos-port-src
 
 FreeBSD `bin/sh` prepared for z/OS UNIX, and the Linux adapter used to
-benchmark it against zksh.
+benchmark it against fsh.
 
-This repository is the vendor source for zksh's `vendor/freebsd-sh`
-submodule. It is not installed by zksh and is not part of the zksh
-binary. The name is deliberately broader than the current contents:
+This repository is the source for the `vendor/freebsd-sh` submodule
+of `freebsd-userland-zos-port`. It is not installed by fsh and is not
+part of the fsh binary. The name is deliberately broader than the current contents:
 the goal is a FreeBSD userland port for z/OS, starting with `bin/sh`.
 
 ## Upstream pin
@@ -32,8 +32,8 @@ are upstream; the Linux build adapter is the only local code.
 
 | File | Origin |
 | ---- | ------ |
-| `compat/bsd.h` | zksh-written shim for FreeBSD/BSD typedefs and libc extensions |
-| `compat/btemp.c` | zksh-written signal-name table, `sig2str`/`str2sig`, and `fwopen` via `fopencookie` |
+| `compat/bsd.h` | fsh-written shim for FreeBSD/BSD typedefs and libc extensions |
+| `compat/btemp.c` | fsh-written signal-name table, `sig2str`/`str2sig`, and `fwopen` via `fopencookie` |
 | `compat/setmode.c` | OpenBSD `setmode.c` (same UCB BSD licence as FreeBSD's copy) |
 | `compat/strlcpy.c` | OpenBSD `strlcpy`/`strlcat` implementation |
 
@@ -44,7 +44,7 @@ workloads do not use them.
 
 ## Build
 
-The build is driven from zksh:
+The build is driven from fsh:
 
 ```sh
 ./bench/build-refs.sh --only freebsd-sh
@@ -63,7 +63,7 @@ The result is `build-refs/bin/freebsd-sh`.
 The z/OS port has not started in this repository yet. It is the place
 for that work: spawnp-first process creation, EBCDIC/charset handling,
 tag-aware redirection, and the rest of the FreeBSD `bin/sh` port belong
-here, not in zksh's main tree.
+here, not in fsh's main tree.
 
 ## Licence
 
